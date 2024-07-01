@@ -2,12 +2,19 @@ body {
   font-family: Arial, sans-serif;
   background-color: #f0f0f0;
   display: flex;
-  justify-content: center;
-
   height: 100vh;
   margin: 0;
 }
-
+.login-dk-search{
+  display: flex;
+}
+.form-container{
+  margin-left: 20px;
+  margin-top: 30px;
+}
+.post-deta{
+  display: flex;
+}
 .container {
   display: flex;
   flex-direction: column;
@@ -78,6 +85,17 @@ p {
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 4px;
+  margin-left: 20px;
+  width: 210px;
+}
+.postList ul {
+  display: flex;
+  width: 100%;
+ 
+  flex-wrap: wrap;
+}
+.postList{
+  width: 100%;
 }
 
 #postDetails {
