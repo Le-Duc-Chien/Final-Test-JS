@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo App</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <h1>Todo App</h1>
+
+  <div class="todo-container">
+    <form class="todo-form">
+      <input type="text" class="todo-input" placeholder="Nhập task mới" id="list">
+      <button  class="todo-add-button" onclick="listTodo(event)">Thêm</button>
+    </form>
+
+    <div class="todo-filter">
+      <button class="filter-button" id="one" data-filter="all">Tất cả</button>
+      <button class="filter-button" id="two" data-filter="active">Chưa hoàn thành</button>
+      <button class="filter-button" id ="three" data-filter="completed">Đã hoàn thành</button>
+    </div>
+
+    <ul class="todo-list" id="dsvl"></ul>
+
+    <button class="clear-completed-button">Xóa hoàn thành</button>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>

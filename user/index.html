@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>users</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="container">
+        <div class="form-container">
+          <h2>Login</h2>
+          <form id="loginForm">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Login</button>
+          </form>
+          <p id="loginMessage"></p>
+        </div>
+    
+        <div class="form-container">
+          <h2>Register</h2>
+          <form id="registerForm">
+            <label for="first_name">First Name:</label>
+            <input type="text" id="first_name" name="first_name" required>
+            <label for="last_name">Last Name:</label>
+            <input type="text" id="last_name" name="last_name" required>
+            <label for="registerEmail">Email:</label>
+            <input type="email" id="registerEmail" name="registerEmail" required>
+            <label for="registerPassword">Password:</label>
+            <input type="password" id="registerPassword" name="registerPassword" required>
+            <button type="submit">Register</button>
+          </form>
+          <p id="registerMessage"></p>
+        </div>
+    
+        <div class="form-container">
+          <h2>Users</h2>
+          <input type="text" id="searchKeyword" placeholder="Nhập keyword...">
+          <button id="searchButton">Search</button>
+          <ul id="userList"></ul>
+        </div>
+    
+        <div class="form-container">
+          <h2>Posts</h2>
+          <ul id="postList"></ul>
+        </div>
+        
+        <div class="form-container">
+          <h2>Post Details</h2>
+          <input type="number" id="postId" placeholder="Nhập ID của post">
+          <button id="viewPostButton">View Post</button>
+          <div id="postDetails"></div>
+        </div>
+    
+        <div class="form-container">
+          <h2>Posts by User</h2>
+          <input type="email" id="userEmail" placeholder="Nhập email của user">
+          <button id="searchPostsByUser">Search Posts</button>
+          <ul id="userPostList"></ul>
+        </div>
+      </div>
+  </body>
+  <script src="users.js"></script>
+  <script src="posts.js"></script>
+  <script src="index.js"></script>
+</html>

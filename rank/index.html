@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Xếp hạng đội bóng</title>
+<link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div class="container">
+    <h1>Xếp hạng đội bóng</h1>
+    <div class="input-section">
+        <label for="teamName">Tên đội bóng:</label>
+        <input type="text" id="teamName">
+        <label for="teamPoints">Điểm số:</label>
+        <input type="number" id="teamPoints">
+        <label for="teamGD">Hiệu số bàn thắng:</label>
+        <input type="number" id="teamGD">
+        <button onclick="addTeam()">Thêm đội bóng</button>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Tên đội</th>
+                <th>Điểm số</th>
+                <th>Hiệu số bàn thắng</th>
+                <th>Thao tác</th>
+            </tr>
+        </thead>
+        <tbody id="teamTable">
+            <!-- Dữ liệu đội bóng sẽ được thêm bằng JavaScript -->
+        </tbody>
+    </table>
+</div>
+
+<script src="index.js"></script>
+</body>
+</html>

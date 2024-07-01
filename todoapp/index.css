@@ -1,0 +1,123 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  .todo-container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .todo-form {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  .todo-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+  }
+  
+  .todo-add-button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+  }
+  #one:focus, #two:focus, #three:focus{
+background-color: rgb(132, 129, 129);
+  }
+ 
+  .todo-filter {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  .filter-button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  .todo-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .todo-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .todo-checkbox {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  .todo-text {
+    flex-grow: 1;
+    font-size: 16px;
+  }
+  .completed {
+    text-decoration: line-through;
+    color: gray;
+  }
+  .todo-delete-button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin-left: auto;
+  }
+  
+  .todo-delete-button:hover {
+    color: red;
+  }
+  
+  .completed {
+    text-decoration: line-through;
+    color: #999;
+  }
+  /* CSS cho mục danh sách */
+#dsvl li {
+  list-style-type: none; /* Loại bỏ dấu chấm mặc định */
+  padding: 10px;
+  border-bottom: 1px solid #ccc; /* Đường viền phân cách giữa các mục */
+  cursor: pointer; /* Thay đổi con trỏ thành dấu chỉ vào khi di chuột qua */
+  display: flex; /* Hiển thị các phần tử bên trong theo chiều ngang */
+  justify-content: space-between; /* Căn chỉnh các phần tử bên trong theo khoảng cách giữa chúng */
+  align-items: center; /* Căn chỉnh các phần tử bên trong theo trục dọc */
+}
+
+/* CSS cho mục đã hoàn thành */
+#dsvl li.completed {
+  text-decoration: line-through; /* Gạch ngang chữ khi đã hoàn thành */
+  color: #999; /* Tùy chọn: Thay đổi màu của các mục đã hoàn thành */
+}
+
+/* Hiệu ứng khi di chuột qua mục */
+#dsvl li:hover {
+  background-color: #f0f0f0; /* Tùy chọn: Thay đổi màu nền khi di chuột qua */
+}
+
+/* CSS cho nút xóa */
+.delete-button {
+  background: #f0f0f0;
+  border: 1px solid #999;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+/* Hiệu ứng khi di chuột qua nút xóa */
+.delete-button:hover {
+  background: #e0e0e0;
+}
