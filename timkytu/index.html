@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <link rel="stylesheet" href="index.css" />
+  <body>
+    <div class="container">
+      <h1>Tìm kiếm phần tử không giống nhau</h1>
+      <label for="array1">Mảng 1: </label>
+      <input type="text" id="array1" placeholder="Nhập mảng các phần tử cách nhau bởi dấu ','" />
+      <br /><br />
+      <label for="array2">Mảng 2: </label>
+      <input type="text" id="array2" placeholder="Nhập mảng các phần tử cách nhau bởi dấu ','" />
+      <br /><br />
+      <button onclick="findUniqueElements()">Tìm kiếm</button>
+      <br /><br />
+      <h2>Các phần tử không giống nhau là:</h2>
+      <p id="result"></p>
+    </div>
+  </body>
+  <script src="index.js"></script>
+</html>
