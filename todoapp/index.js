@@ -1,10 +1,10 @@
 function listTodo(event) {
   event.preventDefault();
-  const list = document.getElementById("list").value;
-  const listCV = document.getElementById("dsvl");
+  var list = document.getElementById("list").value;
+  var listCV = document.getElementById("dsvl");
 
   if (list.trim() !== "") {
-    const listItem = document.createElement("li");
+    var listItem = document.createElement("li");
     listItem.textContent = list;
 
     listItem.addEventListener("click", function() {
@@ -12,7 +12,7 @@ function listTodo(event) {
       updateLocalStorage();
     });
 
-    const deleteButton = document.createElement("button");
+    var deleteButton = document.createElement("button");
     deleteButton.textContent = "xóa";
     deleteButton.classList.add("delete-button");
 
@@ -30,17 +30,17 @@ function listTodo(event) {
 }
 
 function saveToLocalStorage(value) {
-  const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+  var tasks = JSON.parse(localStorage.getItem("tasks")) || [];
   tasks.push({ text: value, completed: false });
   localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
 function loadFromLocalStorage() {
-  const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-  const listCV = document.getElementById("dsvl");
+  var tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+  var listCV = document.getElementById("dsvl");
 
-  tasks.forEach(task => {
-    const listItem = document.createElement("li");
+  tasks.forEach(function(task) {
+    var listItem = document.createElement("li");
     listItem.textContent = task.text;
     if (task.completed) {
       listItem.classList.add("completed");
@@ -51,7 +51,7 @@ function loadFromLocalStorage() {
       updateLocalStorage();
     });
 
-    const deleteButton = document.createElement("button");
+    var deleteButton = document.createElement("button");
     deleteButton.textContent = "xóa";
     deleteButton.classList.add("delete-button");
     deleteButton.addEventListener("click", function() {
@@ -65,17 +65,19 @@ function loadFromLocalStorage() {
 }
 
 function updateLocalStorage() {
-  const listItems = document.querySelectorAll("#dsvl li");
-  const tasks = Array.from(listItems).map(item => ({
-    text: item.childNodes[0].nodeValue.trim(),
-    completed: item.classList.contains("completed"),
-  }));
+  var listItems = document.querySelectorAll("#dsvl li");
+  var tasks = Array.prototype.slice.call(listItems).map(function(item) {
+    return {
+      text: item.childNodes[0].nodeValue.trim(),
+      completed: item.classList.contains("completed"),
+    };
+  });
   localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
 function filterTasks(filter) {
-  const listItems = document.querySelectorAll("#dsvl li");
-  listItems.forEach(item => {
+  var listItems = document.querySelectorAll("#dsvl li");
+  Array.prototype.forEach.call(listItems, function(item) {
     switch (filter) {
       case "all":
         item.style.display = "block";
@@ -89,18 +91,24 @@ function filterTasks(filter) {
     }
   });
 
-  document.querySelectorAll(".tab").forEach(tab => tab.classList.remove("active"));
-  document.querySelector(`.tab[data-filter="${filter}"]`).classList.add("active");
+  var tabs = document.querySelectorAll(".tab");
+  Array.prototype.forEach.call(tabs, function(tab) {
+    tab.classList.remove("active");
+  });
+  document.querySelector('.tab[data-filter="' + filter + '"]').classList.add("active");
 }
 
 function clearCompletedTasks() {
-  const listItems = document.querySelectorAll("#dsvl .completed");
-  listItems.forEach(item => item.remove());
+  var listItems = document.querySelectorAll("#dsvl .completed");
+  Array.prototype.forEach.call(listItems, function(item) {
+    item.remove();
+  });
   updateLocalStorage();
 }
 
 document.addEventListener("DOMContentLoaded", loadFromLocalStorage);
-document.querySelectorAll(".tab").forEach(tab => {
+var tabs = document.querySelectorAll(".tab");
+Array.prototype.forEach.call(tabs, function(tab) {
   tab.addEventListener("click", function() {
     filterTasks(this.getAttribute("data-filter"));
   });

@@ -38,7 +38,8 @@ h1 {
   position: relative;
 }
 
-.tab.active, .tab:focus {
+.tab.active,
+.tab:focus {
   border-bottom: 2px solid #007bff;
 }
 
@@ -53,6 +54,7 @@ h1 {
   border: 1px solid #ddd;
   border-radius: 4px 0 0 4px;
   outline: none;
+  width: 330px;
 }
 
 .input-container .add-btn {
@@ -84,7 +86,7 @@ h1 {
 }
 
 .delete-button {
-  background: #007BFF;
+  background: #007bff;
   position: absolute;
   right: 0;
   color: white;
@@ -109,7 +111,6 @@ h1 {
   cursor: pointer;
   width: 100%;
   margin-top: 20px;
-  transition: background 0.3s ease;
 }
 
 .clear-completed-button:hover {
