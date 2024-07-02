@@ -1,123 +1,117 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-  }
-  
-  .todo-container {
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  
-  .todo-form {
-    display: flex;
-    margin-bottom: 20px;
-  }
-  
-  .todo-input {
-    flex-grow: 1;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px 0 0 5px;
-  }
-  
-  .todo-add-button {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-  }
-  #one:focus, #two:focus, #three:focus{
-background-color: rgb(132, 129, 129);
-  }
- 
-  .todo-filter {
-    display: flex;
-    margin-bottom: 20px;
-  }
-  
-  .filter-button {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-right: 10px;
-  }
-  
-  .todo-list {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .todo-item {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
-  }
-  
-  .todo-checkbox {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-    cursor: pointer;
-  }
-  
-  .todo-text {
-    flex-grow: 1;
-    font-size: 16px;
-  }
-  .completed {
-    text-decoration: line-through;
-    color: gray;
-  }
-  .todo-delete-button {
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-    margin-left: auto;
-  }
-  
-  .todo-delete-button:hover {
-    color: red;
-  }
-  
-  .completed {
-    text-decoration: line-through;
-    color: #999;
-  }
-  /* CSS cho mục danh sách */
-#dsvl li {
-  list-style-type: none; /* Loại bỏ dấu chấm mặc định */
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 400px;
+}
+
+h1 {
+  text-align: center;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.tab {
+  background: none;
+  border: none;
   padding: 10px;
-  border-bottom: 1px solid #ccc; /* Đường viền phân cách giữa các mục */
-  cursor: pointer; /* Thay đổi con trỏ thành dấu chỉ vào khi di chuột qua */
-  display: flex; /* Hiển thị các phần tử bên trong theo chiều ngang */
-  justify-content: space-between; /* Căn chỉnh các phần tử bên trong theo khoảng cách giữa chúng */
-  align-items: center; /* Căn chỉnh các phần tử bên trong theo trục dọc */
+  cursor: pointer;
+  font-size: 16px;
+  outline: none;
+  position: relative;
 }
 
-/* CSS cho mục đã hoàn thành */
-#dsvl li.completed {
-  text-decoration: line-through; /* Gạch ngang chữ khi đã hoàn thành */
-  color: #999; /* Tùy chọn: Thay đổi màu của các mục đã hoàn thành */
+.tab.active, .tab:focus {
+  border-bottom: 2px solid #007bff;
 }
 
-/* Hiệu ứng khi di chuột qua mục */
-#dsvl li:hover {
-  background-color: #f0f0f0; /* Tùy chọn: Thay đổi màu nền khi di chuột qua */
+.input-container {
+  display: flex;
+  margin-bottom: 20px;
 }
 
-/* CSS cho nút xóa */
-.delete-button {
-  background: #f0f0f0;
-  border: 1px solid #999;
-  border-radius: 5px;
-  padding: 5px 10px;
+.input-container input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+}
+
+.input-container .add-btn {
+  padding: 10px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 0 4px 4px 0;
   cursor: pointer;
 }
 
-/* Hiệu ứng khi di chuột qua nút xóa */
+.todo-list {
+  list-style: none;
+  padding: 0;
+}
+
+.todo-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+}
+
+.todo-list li.completed {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.delete-button {
+  background: #007BFF;
+  position: absolute;
+  right: 0;
+  color: white;
+  border-radius: 4px;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background 0.3s ease;
+}
+
 .delete-button:hover {
-  background: #e0e0e0;
+  background: #d43f3f;
+}
+
+.clear-completed-button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 20px;
+  transition: background 0.3s ease;
+}
+
+.clear-completed-button:hover {
+  background-color: #d43f3f;
 }

@@ -14,11 +14,8 @@ function listTodo(event) {
 
     const deleteButton = document.createElement("button");
     deleteButton.textContent = "xóa";
-    deleteButton.style.background = "#f0f0f0";
-    deleteButton.style.borderRadius= "5px";
-    deleteButton.style.marginLeft = "30px";
-    deleteButton.style.border = "#999 solid 1px";
     deleteButton.classList.add("delete-button");
+
     deleteButton.addEventListener("click", function() {
       listItem.remove();
       updateLocalStorage();
@@ -55,7 +52,7 @@ function loadFromLocalStorage() {
     });
 
     const deleteButton = document.createElement("button");
-    deleteButton.textContent = "X";
+    deleteButton.textContent = "xóa";
     deleteButton.classList.add("delete-button");
     deleteButton.addEventListener("click", function() {
       listItem.remove();
@@ -91,6 +88,9 @@ function filterTasks(filter) {
         break;
     }
   });
+
+  document.querySelectorAll(".tab").forEach(tab => tab.classList.remove("active"));
+  document.querySelector(`.tab[data-filter="${filter}"]`).classList.add("active");
 }
 
 function clearCompletedTasks() {
@@ -100,10 +100,9 @@ function clearCompletedTasks() {
 }
 
 document.addEventListener("DOMContentLoaded", loadFromLocalStorage);
-document.querySelector(".todo-filter").addEventListener("click", function(event) {
-  if (event.target.classList.contains("filter-button")) {
-    filterTasks(event.target.dataset.filter);
-  }
+document.querySelectorAll(".tab").forEach(tab => {
+  tab.addEventListener("click", function() {
+    filterTasks(this.getAttribute("data-filter"));
+  });
 });
-
 document.querySelector(".clear-completed-button").addEventListener("click", clearCompletedTasks);
